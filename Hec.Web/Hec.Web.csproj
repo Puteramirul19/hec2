@@ -1,0 +1,1206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{94AE90EA-C53A-4DD7-B225-E4848A701A25}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hec.Web</RootNamespace>
+    <AssemblyName>Hec.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TypeScriptToolsVersion>2.1</TypeScriptToolsVersion>
+    <Use64BitIISExpress />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac, Version=4.0.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.0.1\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Configuration, Version=4.0.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Configuration.4.0.1\lib\net45\Autofac.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.4.0.0\lib\net451\Autofac.Integration.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.4.0.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Hangfire.Autofac, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.Autofac.2.2.0\lib\net45\Hangfire.Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Hangfire.Core, Version=1.6.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.Core.1.6.6\lib\net45\Hangfire.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Hangfire.SqlServer, Version=1.6.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.SqlServer.1.6.6\lib\net45\Hangfire.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Kendo.Mvc">
+      <HintPath>..\libraries\Kendo.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqKit.EntityFramework, Version=1.1.8.0, Culture=neutral, PublicKeyToken=b6c8cfc71f7a6a80, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqKit.EntityFramework.1.1.8.0\lib\net452\LinqKit.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.Configuration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.1.0.0\lib\netstandard1.1\Microsoft.Extensions.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.1.0.0\lib\netstandard1.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.FileExtensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.FileExtensions.1.0.0\lib\net451\Microsoft.Extensions.Configuration.FileExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Json, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Json.1.0.0\lib\net451\Microsoft.Extensions.Configuration.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Abstractions.1.0.0\lib\netstandard1.0\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Physical, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Physical.1.0.0\lib\net451\Microsoft.Extensions.FileProviders.Physical.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileSystemGlobbing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileSystemGlobbing.1.0.0\lib\net451\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.1.0.0\lib\netstandard1.0\Microsoft.Extensions.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MigraDoc.DocumentObjectModel, Version=1.32.4334.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\MigraDoc.DocumentObjectModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MigraDoc.Rendering, Version=1.32.4334.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\MigraDoc.Rendering.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MigraDoc.RtfRendering, Version=1.32.4334.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\MigraDoc.RtfRendering.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.3.10\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\PdfSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\PdfSharp.Charting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SpreadsheetLight, Version=3.4.7.0, Culture=neutral, PublicKeyToken=32fbb46dc1730c57, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpreadsheetLight.3.4.7\lib\SpreadsheetLight.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Telerik.Reporting, Version=10.2.16.1025, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libraries\Telerik.Reporting.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Reporting.Services.WebApi, Version=10.2.16.1025, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libraries\Telerik.Reporting.Services.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Reporting.XpsRendering, Version=10.2.16.1025, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libraries\Telerik.Reporting.XpsRendering.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\HangfireBootstrapper.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\JsonNetResult.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AppliancesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HouseCategoriesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HouseTypesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TariffController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PublicUsersController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
+    <Compile Include="Areas\Public\Controllers\AppliancesController.cs" />
+    <Compile Include="Areas\Public\Controllers\FriendsController.cs" />
+    <Compile Include="Areas\Public\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Public\PublicAreaRegistration.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Areas\Public\Controllers\ApplianceComparisonController.cs" />
+    <Compile Include="Areas\Public\Controllers\UsageCalculatorController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Areas\Public\Controllers\BillCalculatorController.cs" />
+    <Compile Include="Areas\Public\Controllers\BillInfoController.cs" />
+    <Compile Include="Controllers\DirectoryUserController.cs" />
+    <Compile Include="Areas\Admin\Controllers\EmailTemplateController.cs" />
+    <Compile Include="Areas\Admin\Controllers\EmailTemplateListItemController.cs" />
+    <Compile Include="Areas\Public\Controllers\EnergyTipsController.cs" />
+    <Compile Include="Controllers\FilePublicController.cs" />
+    <Compile Include="Controllers\FileController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReportingsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OffDayController.cs" />
+    <Compile Include="Controllers\PdfController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RolesController.cs" />
+    <Compile Include="Controllers\SessionController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SetupController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SlaSettingsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\StatesController.cs" />
+    <Compile Include="Controllers\GridController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HelpFileController.cs" />
+    <Compile Include="Areas\Admin\Controllers\EmailQueueController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RoleGridItemController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TipsController.cs" />
+    <Compile Include="Controllers\UserDetailController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TipCategoriesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlHelpers.cs" />
+    <Compile Include="Models\OrderViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="adminlte\css\AdminLTE.css" />
+    <Content Include="adminlte\css\AdminLTE.min.css" />
+    <Content Include="adminlte\css\AdminLTE_fonts.css" />
+    <Content Include="adminlte\css\alt\AdminLTE-bootstrap-social.css" />
+    <Content Include="adminlte\css\alt\AdminLTE-bootstrap-social.min.css" />
+    <Content Include="adminlte\css\alt\AdminLTE-fullcalendar.css" />
+    <Content Include="adminlte\css\alt\AdminLTE-fullcalendar.min.css" />
+    <Content Include="adminlte\css\alt\AdminLTE-select2.css" />
+    <Content Include="adminlte\css\alt\AdminLTE-select2.min.css" />
+    <Content Include="adminlte\css\alt\AdminLTE-without-plugins.css" />
+    <Content Include="adminlte\css\alt\AdminLTE-without-plugins.min.css" />
+    <Content Include="adminlte\css\skins\_all-skins.css" />
+    <Content Include="adminlte\css\skins\_all-skins.min.css" />
+    <Content Include="adminlte\img\avatar.png" />
+    <Content Include="adminlte\img\avatar04.png" />
+    <Content Include="adminlte\img\avatar2.png" />
+    <Content Include="adminlte\img\avatar3.png" />
+    <Content Include="adminlte\img\avatar5.png" />
+    <Content Include="adminlte\img\boxed-bg.jpg" />
+    <Content Include="adminlte\img\boxed-bg.png" />
+    <Content Include="adminlte\img\credit\american-express.png" />
+    <Content Include="adminlte\img\credit\cirrus.png" />
+    <Content Include="adminlte\img\credit\mastercard.png" />
+    <Content Include="adminlte\img\credit\mestro.png" />
+    <Content Include="adminlte\img\credit\paypal.png" />
+    <Content Include="adminlte\img\credit\paypal2.png" />
+    <Content Include="adminlte\img\credit\visa.png" />
+    <Content Include="adminlte\img\default-50x50.gif" />
+    <Content Include="adminlte\img\icons.png" />
+    <Content Include="adminlte\img\photo1.png" />
+    <Content Include="adminlte\img\photo2.png" />
+    <Content Include="adminlte\img\photo3.jpg" />
+    <Content Include="adminlte\img\photo4.jpg" />
+    <Content Include="adminlte\img\user1-128x128.jpg" />
+    <Content Include="adminlte\img\user2-160x160.jpg" />
+    <Content Include="adminlte\img\user3-128x128.jpg" />
+    <Content Include="adminlte\img\user4-128x128.jpg" />
+    <Content Include="adminlte\img\user5-128x128.jpg" />
+    <Content Include="adminlte\img\user6-128x128.jpg" />
+    <Content Include="adminlte\img\user7-128x128.jpg" />
+    <Content Include="adminlte\img\user8-128x128.jpg" />
+    <Content Include="adminlte\js\adminlte.js" />
+    <Content Include="adminlte\js\adminlte.min.js" />
+    <Content Include="adminlte\js\app.js" />
+    <Content Include="adminlte\js\app.min.js" />
+    <Content Include="adminlte\js\demo.js" />
+    <Content Include="adminlte\js\pages\dashboard.js" />
+    <Content Include="adminlte\js\pages\dashboard2.js" />
+    <Content Include="bootstrap\css\bootstrap.min.css" />
+    <Content Include="bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="bootstrap\dist\css\bootstrap.css" />
+    <Content Include="bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="bootstrap\dist\js\bootstrap.js" />
+    <Content Include="bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="bootstrap\dist\js\npm.js" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="bootstrap\js\affix.js" />
+    <Content Include="bootstrap\js\alert.js" />
+    <Content Include="bootstrap\js\bootstrap.min.js" />
+    <Content Include="bootstrap\js\button.js" />
+    <Content Include="bootstrap\js\carousel.js" />
+    <Content Include="bootstrap\js\collapse.js" />
+    <Content Include="bootstrap\js\dropdown.js" />
+    <Content Include="bootstrap\js\modal.js" />
+    <Content Include="bootstrap\js\npm.js" />
+    <Content Include="bootstrap\js\popover.js" />
+    <Content Include="bootstrap\js\scrollspy.js" />
+    <Content Include="bootstrap\js\tab.js" />
+    <Content Include="bootstrap\js\tooltip.js" />
+    <Content Include="bootstrap\js\transition.js" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ekko-lightbox.min.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\ionicons.min.css" />
+    <Content Include="Content\jquery.bxslider.css" />
+    <Content Include="css\chartist.min.css" />
+    <Content Include="css\custom.css" />
+    <Content Include="Content\override.css" />
+    <Content Include="Content\hec.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\hec-override.css" />
+    <Content Include="css\hec.css" />
+    <Content Include="css\hec1.css" />
+    <Content Include="css\jcarousel.responsive.css" />
+    <Content Include="css\jquery.mCustomScrollbar.min.css" />
+    <Content Include="css\responsive.css" />
+    <Content Include="css\skins\default.css" />
+    <Content Include="css\theme-animate.css" />
+    <Content Include="css\theme-elements.css" />
+    <Content Include="css\theme.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\roboto-condensed\Apache License.txt" />
+    <Content Include="Global.asax" />
+    <Content Include="iCheck\flat\aero%402x.png" />
+    <Content Include="iCheck\flat\aero.css" />
+    <Content Include="iCheck\flat\aero.png" />
+    <Content Include="iCheck\flat\blue%402x.png" />
+    <Content Include="iCheck\flat\blue.css" />
+    <Content Include="iCheck\flat\blue.png" />
+    <Content Include="iCheck\flat\flat%402x.png" />
+    <Content Include="iCheck\flat\flat.css" />
+    <Content Include="iCheck\flat\flat.png" />
+    <Content Include="iCheck\flat\green%402x.png" />
+    <Content Include="iCheck\flat\green.css" />
+    <Content Include="iCheck\flat\green.png" />
+    <Content Include="iCheck\flat\grey%402x.png" />
+    <Content Include="iCheck\flat\grey.css" />
+    <Content Include="iCheck\flat\grey.png" />
+    <Content Include="iCheck\flat\orange%402x.png" />
+    <Content Include="iCheck\flat\orange.css" />
+    <Content Include="iCheck\flat\orange.png" />
+    <Content Include="iCheck\flat\pink%402x.png" />
+    <Content Include="iCheck\flat\pink.css" />
+    <Content Include="iCheck\flat\pink.png" />
+    <Content Include="iCheck\flat\purple%402x.png" />
+    <Content Include="iCheck\flat\purple.css" />
+    <Content Include="iCheck\flat\purple.png" />
+    <Content Include="iCheck\flat\red%402x.png" />
+    <Content Include="iCheck\flat\red.css" />
+    <Content Include="iCheck\flat\red.png" />
+    <Content Include="iCheck\flat\yellow%402x.png" />
+    <Content Include="iCheck\flat\yellow.css" />
+    <Content Include="iCheck\flat\yellow.png" />
+    <Content Include="iCheck\flat\_all.css" />
+    <Content Include="iCheck\icheck.min.js" />
+    <Content Include="Images\200.png" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\appliance-calculator.jpg" />
+    <Content Include="Images\avatar-background-pattern.png" />
+    <Content Include="Images\bg-1.jpg" />
+    <Content Include="Images\bg-2.jpg" />
+    <Content Include="Images\bg-3.jpg" />
+    <Content Include="Images\bg-4.jpg" />
+    <Content Include="Images\bg-5.jpg" />
+    <Content Include="Images\bg-pic.jpg" />
+    <Content Include="Images\BG_Appliance.jpg" />
+    <Content Include="Images\BG_EnergyTips.jpg" />
+    <Content Include="Images\BG_EnergyUsage.jpg" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\compare_appliance.jpg" />
+    <Content Include="Images\compare_single.jpg" />
+    <Content Include="Images\default-house.png" />
+    <Content Include="Images\dp-default.png" />
+    <Content Include="Images\energy-usage.jpg" />
+    <Content Include="Images\features\BG_Features.jpg" />
+    <Content Include="Images\features\Features_001.jpg" />
+    <Content Include="Images\features\Features_002.jpg" />
+    <Content Include="Images\features\Features_003.jpg" />
+    <Content Include="Images\features\greendashboard_01.png" />
+    <Content Include="Images\features\savingtips_01.jpg" />
+    <Content Include="Images\footer-pattern.png" />
+    <Content Include="Images\friend_emoji_sad.png" />
+    <Content Include="Images\friend_emoji_smile.png" />
+    <Content Include="Images\graph-dummy.jpg" />
+    <Content Include="Images\green_bg.jpg" />
+    <Content Include="Images\green_co2_emission.png" />
+    <Content Include="Images\green_energy_saved.png" />
+    <Content Include="Images\green_trees.png" />
+    <Content Include="Images\hec-banner-1.jpg" />
+    <Content Include="Images\hec-banner-2.jpg" />
+    <Content Include="Images\hec-banner-3.jpg" />
+    <Content Include="Images\hec-banner-4.jpg" />
+    <Content Include="Images\hec-sprite.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\house\Apartment_1-big.png" />
+    <Content Include="Images\house\Apartment_1.png" />
+    <Content Include="Images\house\Bungalow_1-big.png" />
+    <Content Include="Images\house\Bungalow_1.png" />
+    <Content Include="Images\house\Bungalow_2-big.png" />
+    <Content Include="Images\house\Bungalow_2.png" />
+    <Content Include="Images\house\Bungalow_N-big.png" />
+    <Content Include="Images\house\Bungalow_N.png" />
+    <Content Include="Images\house\Condominium_N-big.png" />
+    <Content Include="Images\house\Condominium_N.png" />
+    <Content Include="Images\house\Flat_N-big.png" />
+    <Content Include="Images\house\Flat_N.png" />
+    <Content Include="Images\house\Kampung_1.png" />
+    <Content Include="Images\house\Kampung_2-big.png" />
+    <Content Include="Images\house\Kampung_2.png" />
+    <Content Include="Images\house\SemiD_1-big.png" />
+    <Content Include="Images\house\SemiD_1.png" />
+    <Content Include="Images\house\SemiD_2-big.png" />
+    <Content Include="Images\house\SemiD_2.png" />
+    <Content Include="Images\house\SemiD_N-big.png" />
+    <Content Include="Images\house\SemiD_N.png" />
+    <Content Include="Images\house\Terrace_1-big.png" />
+    <Content Include="Images\house\Terrace_1.png" />
+    <Content Include="Images\house\Terrace_2-big.png" />
+    <Content Include="Images\house\Terrace_2.png" />
+    <Content Include="Images\house\Terrace_N-big.png" />
+    <Content Include="Images\house\Terrace_N.png" />
+    <Content Include="Images\icon-air-conditioner.png" />
+    <Content Include="Images\icon-aircond.png" />
+    <Content Include="Images\icon-astro.png" />
+    <Content Include="Images\icon-bathroom.png" />
+    <Content Include="Images\icon-bedroom.png" />
+    <Content Include="Images\icon-bulb-store.png" />
+    <Content Include="Images\icon-bulb.png" />
+    <Content Include="Images\icon-calculator.png" />
+    <Content Include="Images\icon-charger.png" />
+    <Content Include="Images\icon-compared.png" />
+    <Content Include="Images\icon-console.png" />
+    <Content Include="Images\icon-dining.png" />
+    <Content Include="Images\icon-dvd.png" />
+    <Content Include="Images\icon-fridge.png" />
+    <Content Include="Images\icon-general.png" />
+    <Content Include="Images\icon-hifi.png" />
+    <Content Include="Images\icon-info-tips.png" />
+    <Content Include="Images\icon-keetle.png" />
+    <Content Include="Images\icon-kipas.png" />
+    <Content Include="Images\icon-kitchen.png" />
+    <Content Include="Images\icon-label-fav.png" />
+    <Content Include="Images\icon-label-hec.png" />
+    <Content Include="Images\icon-lighting.png" />
+    <Content Include="Images\icon-living-room.png" />
+    <Content Include="Images\icon-master.png" />
+    <Content Include="Images\icon-microwave.png" />
+    <Content Include="Images\icon-pc.png" />
+    <Content Include="Images\icon-router.png" />
+    <Content Include="Images\icon-single-calculator.png" />
+    <Content Include="Images\icon-single-house-for-sticky.png" />
+    <Content Include="Images\icon-tv.png" />
+    <Content Include="Images\icon-washingmachine.png" />
+    <Content Include="Images\icon-waterheater.png" />
+    <Content Include="Images\icon-waterpump.png" />
+    <Content Include="Images\icons\icon-user-16.png" />
+    <Content Include="Images\icons\icon-user-24.png" />
+    <Content Include="Images\icons\icon-user-48.png" />
+    <Content Include="Images\ico_01.png" />
+    <Content Include="Images\ico_02.png" />
+    <Content Include="Images\ico_03.png" />
+    <Content Include="Images\image-hec.png" />
+    <Content Include="Images\img-footer.png" />
+    <Content Include="Images\kartun-background-Full.png" />
+    <Content Include="Images\kartun-background.png" />
+    <Content Include="Images\login-icon.png" />
+    <Content Include="Images\logo-dashboard-hide.png" />
+    <Content Include="Images\logo-dashboard.png" />
+    <Content Include="Images\logo-hec.png" />
+    <Content Include="Images\logo-landing.png" />
+    <Content Include="Images\logo-tnb-footer.png" />
+    <Content Include="Images\logo-tnb-ftr.png" />
+    <Content Include="Images\logo-watermark.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\logos\logo-landing.png" />
+    <Content Include="Images\logos\tnbwhite.png" />
+    <Content Include="Images\popup-tips-bg-pattern.png" />
+    <Content Include="Images\profile-pic.jpg" />
+    <Content Include="Images\result-dummy.jpg" />
+    <Content Include="Images\room\Bathroom.png" />
+    <Content Include="Images\room\Bedroom.png" />
+    <Content Include="Images\room\DiningRoom.png" />
+    <Content Include="Images\room\Kitchen.png" />
+    <Content Include="Images\room\LivingRoom.png" />
+    <Content Include="Images\room\MasterBedroom.png" />
+    <Content Include="Images\slides\001.jpg" />
+    <Content Include="Images\slides\002.jpg" />
+    <Content Include="Images\slides\003.jpg" />
+    <Content Include="Images\slides\light-cover.jpg" />
+    <Content Include="Images\slides\mobile-device.png" />
+    <Content Include="Images\slides\slide-bg-3.jpg" />
+    <Content Include="Images\slides\slide-bg-4.jpg" />
+    <Content Include="Images\slides\slide-bg-full-2-dark.jpg" />
+    <Content Include="Images\slides\slide-bg-full-2.jpg" />
+    <Content Include="Images\slides\slide-bg-full.jpg" />
+    <Content Include="Images\slides\slide-bg-light.jpg" />
+    <Content Include="Images\slides\slide-bg.jpg" />
+    <Content Include="Images\slides\slide-light-1.jpg" />
+    <Content Include="Images\slides\slide-light-1.png" />
+    <Content Include="Images\slides\slide-light-2.png" />
+    <Content Include="Images\slides\slide-title-border-light.png" />
+    <Content Include="Images\slides\slide-title-border.png" />
+    <Content Include="Images\social-sprites.png" />
+    <Content Include="Images\step-1-hit.png" />
+    <Content Include="Images\step-1.png" />
+    <Content Include="Images\step-2-hit.png" />
+    <Content Include="Images\step-2.png" />
+    <Content Include="Images\tariff-block-table-full.png" />
+    <Content Include="Images\tariff-block-table-small.png" />
+    <Content Include="Images\tariff-block.png" />
+    <Content Include="Images\thumb_01.png" />
+    <Content Include="Images\thumb_02.png" />
+    <Content Include="Images\thumb_03.png" />
+    <Content Include="Images\total-cost-of-ownership-info.png" />
+    <Content Include="Images\UserGuide_01.jpg" />
+    <Content Include="Images\UserGuide_01_thumb.jpg" />
+    <Content Include="Images\UserGuide_02.jpg" />
+    <Content Include="Images\UserGuide_02_thumb.jpg" />
+    <Content Include="Images\UserGuide_03.jpg" />
+    <Content Include="Images\UserGuide_03_thumb.jpg" />
+    <Content Include="Images\UserGuide_04.jpg" />
+    <Content Include="Images\UserGuide_04_thumb.jpg" />
+    <Content Include="Images\video-overlay.png" />
+    <Content Include="jquery-confirm\jquery-confirm.css" />
+    <Content Include="kendo\css\fonts\DejaVu\LICENSE.txt" />
+    <Content Include="kendo\css\fonts\glyphs\KendoUIGlyphs.svg" />
+    <Content Include="kendo\css\images\back.png" />
+    <Content Include="kendo\css\images\kendoui.svg" />
+    <Content Include="kendo\css\images\wp8_icons.png" />
+    <Content Include="kendo\css\images\wp8_inverseicons.png" />
+    <Content Include="kendo\css\kendo.common.min.css" />
+    <Content Include="kendo\css\kendo.rtl.min.css" />
+    <Content Include="kendo\css\kendo.silver.min.css" />
+    <Content Include="kendo\css\Silver\editor.png" />
+    <Content Include="kendo\css\Silver\imagebrowser.png" />
+    <Content Include="kendo\css\Silver\indeterminate.gif" />
+    <Content Include="kendo\css\Silver\loading-image.gif" />
+    <Content Include="kendo\css\Silver\loading.gif" />
+    <Content Include="kendo\css\Silver\loading_2x.gif" />
+    <Content Include="kendo\css\Silver\markers.png" />
+    <Content Include="kendo\css\Silver\markers_2x.png" />
+    <Content Include="kendo\css\Silver\slider-h.gif" />
+    <Content Include="kendo\css\Silver\slider-v.gif" />
+    <Content Include="kendo\css\Silver\sprite.png" />
+    <Content Include="kendo\css\Silver\sprite_2x.png" />
+    <Content Include="kendo\css\Silver\sprite_kpi.png" />
+    <Content Include="kendo\css\Silver\sprite_kpi_2x.png" />
+    <Content Include="kendo\css\textures\brushed-metal.png" />
+    <Content Include="kendo\css\textures\dots1.png" />
+    <Content Include="kendo\css\textures\dots10.png" />
+    <Content Include="kendo\css\textures\dots11.png" />
+    <Content Include="kendo\css\textures\dots12.png" />
+    <Content Include="kendo\css\textures\dots13.png" />
+    <Content Include="kendo\css\textures\dots2.png" />
+    <Content Include="kendo\css\textures\dots3.png" />
+    <Content Include="kendo\css\textures\dots4.png" />
+    <Content Include="kendo\css\textures\dots5.png" />
+    <Content Include="kendo\css\textures\dots6.png" />
+    <Content Include="kendo\css\textures\dots7.png" />
+    <Content Include="kendo\css\textures\dots8.png" />
+    <Content Include="kendo\css\textures\dots9.png" />
+    <Content Include="kendo\css\textures\glass-lighter.png" />
+    <Content Include="kendo\css\textures\glass.png" />
+    <Content Include="kendo\css\textures\highlight.png" />
+    <Content Include="kendo\css\textures\hsv-gradient.png" />
+    <Content Include="kendo\css\textures\hue.png" />
+    <Content Include="kendo\css\textures\leather1.png" />
+    <Content Include="kendo\css\textures\leather2.png" />
+    <Content Include="kendo\css\textures\noise.png" />
+    <Content Include="kendo\css\textures\stripe1.png" />
+    <Content Include="kendo\css\textures\stripe2.png" />
+    <Content Include="kendo\css\textures\stripe3.png" />
+    <Content Include="kendo\css\textures\stripe4.png" />
+    <Content Include="kendo\css\textures\stripe5.png" />
+    <Content Include="kendo\css\textures\stripe6.png" />
+    <Content Include="kendo\css\textures\transparency.png" />
+    <Content Include="kendo\css\textures\transtexture.png" />
+    <Content Include="kendo\js\cultures\kendo.culture.en-MY.min.js" />
+    <Content Include="kendo\js\cultures\kendo.culture.en-US.min.js" />
+    <Content Include="kendo\js\cultures\kendo.culture.en.min.js" />
+    <Content Include="kendo\js\cultures\kendo.culture.ms-MY.min.js" />
+    <Content Include="kendo\js\cultures\kendo.culture.ms.min.js" />
+    <Content Include="kendo\js\jquery.min.js" />
+    <Content Include="kendo\js\jszip.min.js" />
+    <Content Include="kendo\js\kendo.all.min.js" />
+    <Content Include="kendo\js\kendo.aspnetmvc.min.js" />
+    <Content Include="kendo\js\kendo.web.min.js" />
+    <Content Include="kendo\js\messages\kendo.messages.en-US.min.js" />
+    <Content Include="kendo\js\pako_deflate.min.js" />
+    <Content Include="packages.config" />
+    <Content Include="ReportViewer\js\kendo.subset.2015.3.930.min.js" />
+    <Content Include="ReportViewer\js\telerikReportViewer-10.2.16.1025.js" />
+    <Content Include="ReportViewer\js\telerikReportViewer-10.2.16.1025.min.js" />
+    <Content Include="ReportViewer\styles\kendo.blueopal.min.css" />
+    <Content Include="ReportViewer\styles\kendo.common.min.css" />
+    <Content Include="ReportViewer\styles\telerikReportViewer.css" />
+    <Content Include="ReportViewer\templates\telerikReportViewerTemplate-FA.html" />
+    <Content Include="ReportViewer\templates\telerikReportViewerTemplate.html" />
+    <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\chartist-plugin-axistitle.js" />
+    <Content Include="Scripts\chartist.min.js" />
+    <Content Include="Scripts\custom.js" />
+    <Content Include="Scripts\ekko-lightbox.min.js" />
+    <Content Include="Scripts\hec.js" />
+    <Content Include="Scripts\hec1.js" />
+    <Content Include="Scripts\html5shiv.min.js" />
+    <Content Include="jquery-confirm\jquery-confirm.js" />
+    <Content Include="Scripts\jcarousel.responsive.js" />
+    <Content Include="Areas\Public\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Public\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\ChangePassword.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Index.cshtml" />
+    <Content Include="css\sass\hec.scss" />
+    <Content Include="Areas\Admin\Views\Appliances\Index.cshtml" />
+    <Content Include="Areas\Public\Views\ApplianceComparison\SingleAppliance.cshtml" />
+    <Content Include="Areas\Public\Views\ApplianceComparison\CompareAppliance.cshtml" />
+    <Content Include="Areas\Admin\Views\TipCategory\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\TipCategory\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\TipCategory\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\TipCategory\_Editable.cshtml" />
+    <Content Include="Areas\Public\Views\BillInfo\AddAccount.cshtml" />
+    <Content Include="Areas\Public\Views\BillInfo\DetailsAccount.cshtml" />
+    <Content Include="Areas\Public\Views\BillInfo\EditAccount.cshtml" />
+    <Content Include="Areas\Admin\Views\Appliances\AddPhoto.cshtml" />
+    <Content Include="fonts\roboto-condensed\RobotoCondensed-Bold.ttf" />
+    <Content Include="fonts\roboto-condensed\RobotoCondensed-BoldItalic.ttf" />
+    <Content Include="fonts\roboto-condensed\RobotoCondensed-Italic.ttf" />
+    <Content Include="fonts\roboto-condensed\RobotoCondensed-Light.ttf" />
+    <Content Include="fonts\roboto-condensed\RobotoCondensed-LightItalic.ttf" />
+    <Content Include="fonts\roboto-condensed\RobotoCondensed-Regular.ttf" />
+    <Content Include="Content\HEC2-Training-Manual-User-v1.pdf" />
+    <Content Include="Areas\Public\Views\Friends\Index.cshtml" />
+    <Content Include="Content\EE_Booklet_Domestic_EN.pdf" />
+    <Content Include="Content\EE_Booklet_Domestic_BM.pdf" />
+    <Content Include="Areas\Admin\Views\Tariff\Index.cshtml" />
+    <Content Include="Areas\Public\Views\Friends\Invitations.cshtml" />
+    <Content Include="Areas\Admin\Views\HouseCategories\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\HouseTypes\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\HouseTypes\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\HouseTypes\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\HouseTypes\_Editable.cshtml" />
+    <Content Include="Areas\Admin\Views\Appliances\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Appliances\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Appliances\_Editable.cshtml" />
+    <Content Include="Areas\Admin\Views\PublicUsers\Index.cshtml" />
+    <Content Include="Areas\Public\Views\Home\ChangePhoto.cshtml" />
+    <None Include="Properties\PublishProfiles\HecFolder.pubxml" />
+    <None Include="Properties\PublishProfiles\HecPublish.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery.bxslider.min.js" />
+    <Content Include="Scripts\jquery.jcarousel-swipe.min.js" />
+    <Content Include="Scripts\jquery.jcarousel.min.js" />
+    <Content Include="Scripts\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.slimscroll.min.js" />
+    <Content Include="Scripts\kendo.messages.en-MY.js" />
+    <Content Include="Scripts\kendo.messages.ms-MY.js" />
+    <Content Include="Scripts\lang.en.js" />
+    <Content Include="Scripts\lang.ms.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\mychart.js" />
+    <Content Include="Scripts\portal.js" />
+    <Content Include="Scripts\require.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\site.js" />
+    <Content Include="Scripts\text.js" />
+    <Content Include="Scripts\theme.init.js" />
+    <Content Include="Scripts\theme.js" />
+    <Content Include="Scripts\views\view.contact.js" />
+    <Content Include="Scripts\views\view.home.js" />
+    <Content Include="Uploads\Appliances\Air Condition.png" />
+    <Content Include="Uploads\Appliances\Astro Decoder.png" />
+    <Content Include="Uploads\Appliances\Bread Maker.png" />
+    <Content Include="Uploads\Appliances\Chest Freezer.png" />
+    <Content Include="Uploads\Appliances\Clothes Steamer.png" />
+    <Content Include="Uploads\Appliances\Desktop PC.png" />
+    <Content Include="Uploads\Appliances\Dishwasher.png" />
+    <Content Include="Uploads\Appliances\Dryer.png" />
+    <Content Include="Uploads\Appliances\DVD Player.png" />
+    <Content Include="Uploads\Appliances\Electric Iron.png" />
+    <Content Include="Uploads\Appliances\Electric Kettle.png" />
+    <Content Include="Uploads\Appliances\Electric Shaver.png" />
+    <Content Include="Uploads\Appliances\Fan.png" />
+    <Content Include="Uploads\Appliances\Fridge.png" />
+    <Content Include="Uploads\Appliances\Game Console.png" />
+    <Content Include="Uploads\Appliances\Hair Dryer.png" />
+    <Content Include="Uploads\Appliances\HI-FI.png" />
+    <Content Include="Uploads\Appliances\Hypp TV Decoder.png" />
+    <Content Include="Uploads\Appliances\Induction Cooker.png" />
+    <Content Include="Uploads\Appliances\Laptop.png" />
+    <Content Include="Uploads\Appliances\Light.png" />
+    <Content Include="Uploads\Appliances\Microwave.png" />
+    <Content Include="Uploads\Appliances\Oven.png" />
+    <Content Include="Uploads\Appliances\Phone Charger.png" />
+    <Content Include="Uploads\Appliances\Printer.png" />
+    <Content Include="Uploads\Appliances\Rice Cooker.png" />
+    <Content Include="Uploads\Appliances\Router.png" />
+    <Content Include="Uploads\Appliances\Scanner.png" />
+    <Content Include="Uploads\Appliances\Stand Mixer.png" />
+    <Content Include="Uploads\Appliances\Television.png" />
+    <Content Include="Uploads\Appliances\Toaster.png" />
+    <Content Include="Uploads\Appliances\Vacuum Cleaner.png" />
+    <Content Include="Uploads\Appliances\Washing Machine.png" />
+    <Content Include="Uploads\Appliances\Water Heater.png" />
+    <Content Include="Uploads\TipCategory\Air Conditioner.png" />
+    <Content Include="Uploads\TipCategory\Computer.png" />
+    <Content Include="Uploads\TipCategory\Fridge.png" />
+    <Content Include="Uploads\TipCategory\General.png" />
+    <Content Include="Uploads\TipCategory\Iron.png" />
+    <Content Include="Uploads\TipCategory\Kettle.png" />
+    <Content Include="Uploads\TipCategory\Lighting.png" />
+    <Content Include="Uploads\TipCategory\Microwave.png" />
+    <Content Include="Uploads\TipCategory\Washing Machine.png" />
+    <Content Include="Uploads\TipCategory\Water Heater.png" />
+    <Content Include="Uploads\TipCategory\Water Pump.png" />
+    <Content Include="Uploads\Tips\thumb.jpg" />
+    <Content Include="Uploads\Tips\thumb_big.jpg" />
+    <Content Include="vendor\bootstrap-rtl\bootstrap-rtl.css" />
+    <Content Include="vendor\bootstrap-rtl\bootstrap-rtl.min.css" />
+    <Content Include="vendor\bootstrap\bootstrap-theme.css" />
+    <Content Include="vendor\bootstrap\bootstrap-theme.min.css" />
+    <Content Include="vendor\bootstrap\bootstrap.css" />
+    <Content Include="vendor\bootstrap\bootstrap.js" />
+    <Content Include="vendor\bootstrap\bootstrap.min.css" />
+    <Content Include="vendor\bootstrap\bootstrap.min.js" />
+    <Content Include="vendor\bootstrap\glyphicons-halflings-regular.svg" />
+    <Content Include="vendor\bootstrap\npm.js" />
+    <Content Include="vendor\circle-flip-slideshow\css\component.css" />
+    <Content Include="vendor\circle-flip-slideshow\js\jquery.flipshow.js" />
+    <Content Include="vendor\circle-flip-slideshow\README.txt" />
+    <Content Include="vendor\common\common.js" />
+    <Content Include="vendor\excanvas\excanvas.js" />
+    <Content Include="vendor\fontawesome\css\font-awesome.css" />
+    <Content Include="vendor\fontawesome\css\font-awesome.min.css" />
+    <Content Include="vendor\fontawesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="vendor\isotope\jquery.isotope.js" />
+    <Content Include="vendor\jflickrfeed\jflickrfeed.js" />
+    <Content Include="vendor\jquery-cookie\jquery-cookie.js" />
+    <Content Include="vendor\jquery.appear\jquery.appear.js" />
+    <Content Include="vendor\jquery.easing\jquery.easing.js" />
+    <Content Include="vendor\jquery.easy-pie-chart\jquery.easy-pie-chart.js" />
+    <Content Include="vendor\jquery.gmap\jquery.gmap.js" />
+    <Content Include="vendor\jquery.stellar\jquery.stellar.js" />
+    <Content Include="vendor\jquery.validation\jquery.validation.js" />
+    <Content Include="vendor\jquery\jquery.js" />
+    <Content Include="vendor\magnific-popup\jquery.magnific-popup.js" />
+    <Content Include="vendor\magnific-popup\magnific-popup.css" />
+    <Content Include="vendor\modernizr\modernizr.js" />
+    <Content Include="vendor\nivo-slider\bar\arrows.png" />
+    <Content Include="vendor\nivo-slider\bar\bar.css" />
+    <Content Include="vendor\nivo-slider\bar\bullets.png" />
+    <Content Include="vendor\nivo-slider\bar\loading.gif" />
+    <Content Include="vendor\nivo-slider\dark\arrows.png" />
+    <Content Include="vendor\nivo-slider\dark\bullets.png" />
+    <Content Include="vendor\nivo-slider\dark\dark.css" />
+    <Content Include="vendor\nivo-slider\dark\loading.gif" />
+    <Content Include="vendor\nivo-slider\default\arrows.png" />
+    <Content Include="vendor\nivo-slider\default\bullets.png" />
+    <Content Include="vendor\nivo-slider\default\default.css" />
+    <Content Include="vendor\nivo-slider\default\loading.gif" />
+    <Content Include="vendor\nivo-slider\jquery.nivo.slider.js" />
+    <Content Include="vendor\nivo-slider\light\arrows.png" />
+    <Content Include="vendor\nivo-slider\light\bullets.png" />
+    <Content Include="vendor\nivo-slider\light\light.css" />
+    <Content Include="vendor\nivo-slider\light\loading.gif" />
+    <Content Include="vendor\nivo-slider\nivo-slider.css" />
+    <Content Include="vendor\owlcarousel\ajax-loader.gif" />
+    <Content Include="vendor\owlcarousel\owl.carousel.css" />
+    <Content Include="vendor\owlcarousel\owl.carousel.js" />
+    <Content Include="vendor\owlcarousel\owl.carousel.min.css" />
+    <Content Include="vendor\owlcarousel\owl.carousel.min.js" />
+    <Content Include="vendor\owlcarousel\owl.theme.default.css" />
+    <Content Include="vendor\owlcarousel\owl.theme.default.min.css" />
+    <Content Include="vendor\owlcarousel\owl.theme.green.css" />
+    <Content Include="vendor\owlcarousel\owl.theme.green.min.css" />
+    <Content Include="vendor\owlcarousel\owl.video.play.png" />
+    <Content Include="vendor\requirejs\requirejs.js" />
+    <Content Include="vendor\respond\respond.js" />
+    <Content Include="vendor\rs-plugin\assets\arrowleft.png" />
+    <Content Include="vendor\rs-plugin\assets\arrowright.png" />
+    <Content Include="vendor\rs-plugin\assets\arrow_large_left.png" />
+    <Content Include="vendor\rs-plugin\assets\arrow_large_right.png" />
+    <Content Include="vendor\rs-plugin\assets\arrow_left.png" />
+    <Content Include="vendor\rs-plugin\assets\arrow_left2.png" />
+    <Content Include="vendor\rs-plugin\assets\arrow_right.png" />
+    <Content Include="vendor\rs-plugin\assets\arrow_right2.png" />
+    <Content Include="vendor\rs-plugin\assets\black50.png" />
+    <Content Include="vendor\rs-plugin\assets\boxed_bgtile.png" />
+    <Content Include="vendor\rs-plugin\assets\bullet.png" />
+    <Content Include="vendor\rs-plugin\assets\bullets.png" />
+    <Content Include="vendor\rs-plugin\assets\bullets2.png" />
+    <Content Include="vendor\rs-plugin\assets\bullet_boxed.png" />
+    <Content Include="vendor\rs-plugin\assets\coloredbg.png" />
+    <Content Include="vendor\rs-plugin\assets\grain.png" />
+    <Content Include="vendor\rs-plugin\assets\gridtile.png" />
+    <Content Include="vendor\rs-plugin\assets\gridtile_3x3.png" />
+    <Content Include="vendor\rs-plugin\assets\gridtile_3x3_white.png" />
+    <Content Include="vendor\rs-plugin\assets\gridtile_white.png" />
+    <Content Include="vendor\rs-plugin\assets\large_left.png" />
+    <Content Include="vendor\rs-plugin\assets\large_right.png" />
+    <Content Include="vendor\rs-plugin\assets\loader.gif" />
+    <Content Include="vendor\rs-plugin\assets\loader2.gif" />
+    <Content Include="vendor\rs-plugin\assets\navigdots.png" />
+    <Content Include="vendor\rs-plugin\assets\navigdots_bgtile.png" />
+    <Content Include="vendor\rs-plugin\assets\shadow1.png" />
+    <Content Include="vendor\rs-plugin\assets\shadow2.png" />
+    <Content Include="vendor\rs-plugin\assets\shadow3.png" />
+    <Content Include="vendor\rs-plugin\assets\small_left.png" />
+    <Content Include="vendor\rs-plugin\assets\small_left_boxed.png" />
+    <Content Include="vendor\rs-plugin\assets\small_right.png" />
+    <Content Include="vendor\rs-plugin\assets\small_right_boxed.png" />
+    <Content Include="vendor\rs-plugin\assets\timer.png" />
+    <Content Include="vendor\rs-plugin\assets\timerdot.png" />
+    <Content Include="vendor\rs-plugin\assets\transparent.jpg" />
+    <Content Include="vendor\rs-plugin\assets\white50.png" />
+    <Content Include="vendor\rs-plugin\css\settings-ie8.css" />
+    <Content Include="vendor\rs-plugin\css\settings.css" />
+    <Content Include="vendor\rs-plugin\font\revicons.svg" />
+    <Content Include="vendor\rs-plugin\images\decor_inside.png" />
+    <Content Include="vendor\rs-plugin\images\decor_inside_white.png" />
+    <Content Include="vendor\rs-plugin\images\decor_testimonial.png" />
+    <Content Include="vendor\rs-plugin\images\gradient\g30.png" />
+    <Content Include="vendor\rs-plugin\images\gradient\g40.png" />
+    <Content Include="vendor\rs-plugin\js\jquery.themepunch.enablelog.js" />
+    <Content Include="vendor\rs-plugin\js\jquery.themepunch.revolution.js" />
+    <Content Include="vendor\rs-plugin\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="vendor\rs-plugin\js\jquery.themepunch.tools.min.js" />
+    <Content Include="vendor\vide\vide.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Decimal.cshtml" />
+    <Content Include="vendor\bootstrap-rtl\bootstrap-rtl.css.map" />
+    <Content Include="vendor\bootstrap\bootstrap-theme.css.map" />
+    <Content Include="vendor\bootstrap\bootstrap.css.map" />
+    <Content Include="vendor\bootstrap\glyphicons-halflings-regular.eot" />
+    <Content Include="vendor\bootstrap\glyphicons-halflings-regular.ttf" />
+    <Content Include="vendor\bootstrap\glyphicons-halflings-regular.woff" />
+    <Content Include="vendor\fontawesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="vendor\fontawesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="vendor\fontawesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="vendor\fontawesome\fonts\FontAwesome.otf" />
+    <Content Include="vendor\fontawesome\less\bordered-pulled.less" />
+    <Content Include="vendor\fontawesome\less\core.less" />
+    <Content Include="vendor\fontawesome\less\fixed-width.less" />
+    <Content Include="vendor\fontawesome\less\font-awesome.less" />
+    <Content Include="vendor\fontawesome\less\icons.less" />
+    <Content Include="vendor\fontawesome\less\larger.less" />
+    <Content Include="vendor\fontawesome\less\list.less" />
+    <Content Include="vendor\fontawesome\less\mixins.less" />
+    <Content Include="vendor\fontawesome\less\path.less" />
+    <Content Include="vendor\fontawesome\less\rotated-flipped.less" />
+    <Content Include="vendor\fontawesome\less\spinning.less" />
+    <Content Include="vendor\fontawesome\less\stacked.less" />
+    <Content Include="vendor\fontawesome\less\variables.less" />
+    <Content Include="vendor\fontawesome\scss\font-awesome.scss" />
+    <Content Include="vendor\fontawesome\scss\_bordered-pulled.scss" />
+    <Content Include="vendor\fontawesome\scss\_core.scss" />
+    <Content Include="vendor\fontawesome\scss\_fixed-width.scss" />
+    <Content Include="vendor\fontawesome\scss\_icons.scss" />
+    <Content Include="vendor\fontawesome\scss\_larger.scss" />
+    <Content Include="vendor\fontawesome\scss\_list.scss" />
+    <Content Include="vendor\fontawesome\scss\_mixins.scss" />
+    <Content Include="vendor\fontawesome\scss\_path.scss" />
+    <Content Include="vendor\fontawesome\scss\_rotated-flipped.scss" />
+    <Content Include="vendor\fontawesome\scss\_spinning.scss" />
+    <Content Include="vendor\fontawesome\scss\_stacked.scss" />
+    <Content Include="vendor\fontawesome\scss\_variables.scss" />
+    <Content Include="vendor\rs-plugin\assets\arrows.psd" />
+    <Content Include="vendor\rs-plugin\assets\bullets.psd" />
+    <Content Include="vendor\rs-plugin\assets\small_arrows.psd" />
+    <Content Include="vendor\rs-plugin\font\revicons.eot" />
+    <Content Include="vendor\rs-plugin\font\revicons.ttf" />
+    <Content Include="vendor\rs-plugin\font\revicons.woff" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Sitemap.cshtml" />
+    <Content Include="Views\Session\End.cshtml" />
+    <Content Include="Views\Home\Features.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\site.css" />
+    <Content Include="favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Public\Models\" />
+    <Folder Include="Help\" />
+    <Folder Include="Reports\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="kendo\css\fonts\DejaVu\DejaVuSans-Bold.ttf" />
+    <Content Include="kendo\css\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
+    <Content Include="kendo\css\fonts\DejaVu\DejaVuSans-ExtraLight.ttf" />
+    <Content Include="kendo\css\fonts\DejaVu\DejaVuSans-Oblique.ttf" />
+    <Content Include="kendo\css\fonts\DejaVu\DejaVuSans.ttf" />
+    <Content Include="kendo\css\fonts\DejaVu\DejaVuSansMono-Bold.ttf" />
+    <Content Include="kendo\css\fonts\DejaVu\DejaVuSansMono-BoldOblique.ttf" />
+    <Content Include="kendo\css\fonts\DejaVu\DejaVuSansMono-Oblique.ttf" />
+    <Content Include="kendo\css\fonts\DejaVu\DejaVuSansMono.ttf" />
+    <Content Include="kendo\css\fonts\DejaVu\DejaVuSerif-Bold.ttf" />
+    <Content Include="kendo\css\fonts\DejaVu\DejaVuSerif-BoldItalic.ttf" />
+    <Content Include="kendo\css\fonts\DejaVu\DejaVuSerif-Italic.ttf" />
+    <Content Include="kendo\css\fonts\DejaVu\DejaVuSerif.ttf" />
+    <Content Include="kendo\css\fonts\glyphs\KendoUIGlyphs.eot" />
+    <Content Include="kendo\css\fonts\glyphs\KendoUIGlyphs.ttf" />
+    <Content Include="kendo\css\fonts\glyphs\KendoUIGlyphs.woff" />
+    <Content Include="kendo\css\images\kendoui.ttf" />
+    <Content Include="kendo\css\images\kendoui.woff" />
+    <Content Include="kendo\css\kendo.common.min.css.map" />
+    <Content Include="kendo\css\kendo.rtl.min.css.map" />
+    <Content Include="kendo\css\kendo.silver.min.css.map" />
+    <Content Include="kendo\js\jquery.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="autofac.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Error.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Help.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NLog.config" />
+    <Content Include="adminlte\css\fonts\source-sans-pro-v9-latin-300.ttf" />
+    <Content Include="adminlte\css\fonts\source-sans-pro-v9-latin-300.woff" />
+    <Content Include="adminlte\css\fonts\source-sans-pro-v9-latin-300.woff2" />
+    <Content Include="adminlte\css\fonts\source-sans-pro-v9-latin-300italic.ttf" />
+    <Content Include="adminlte\css\fonts\source-sans-pro-v9-latin-300italic.woff" />
+    <Content Include="adminlte\css\fonts\source-sans-pro-v9-latin-300italic.woff2" />
+    <Content Include="adminlte\css\fonts\source-sans-pro-v9-latin-600.ttf" />
+    <Content Include="adminlte\css\fonts\source-sans-pro-v9-latin-600.woff" />
+    <Content Include="adminlte\css\fonts\source-sans-pro-v9-latin-600.woff2" />
+    <Content Include="adminlte\css\fonts\source-sans-pro-v9-latin-600italic.ttf" />
+    <Content Include="adminlte\css\fonts\source-sans-pro-v9-latin-600italic.woff" />
+    <Content Include="adminlte\css\fonts\source-sans-pro-v9-latin-600italic.woff2" />
+    <Content Include="adminlte\css\fonts\source-sans-pro-v9-latin-700.ttf" />
+    <Content Include="adminlte\css\fonts\source-sans-pro-v9-latin-700.woff" />
+    <Content Include="adminlte\css\fonts\source-sans-pro-v9-latin-700.woff2" />
+    <Content Include="adminlte\css\fonts\source-sans-pro-v9-latin-italic.ttf" />
+    <Content Include="adminlte\css\fonts\source-sans-pro-v9-latin-italic.woff" />
+    <Content Include="adminlte\css\fonts\source-sans-pro-v9-latin-italic.woff2" />
+    <Content Include="adminlte\css\fonts\source-sans-pro-v9-latin-regular.ttf" />
+    <Content Include="adminlte\css\fonts\source-sans-pro-v9-latin-regular.woff" />
+    <Content Include="adminlte\css\fonts\source-sans-pro-v9-latin-regular.woff2" />
+    <Content Include="kendo\js\kendo.aspnetmvc.min.js.map" />
+    <Content Include="kendo\js\kendo.web.min.js.map" />
+    <Content Include="ConnectionStrings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="kendo\js\kendo.all.min.js.map" />
+    <Content Include="bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="css\.sass-cache\3df231dcbb36299a611760ee6e7fb4e9a7b60831\hec.scssc" />
+    <Content Include="css\.sass-cache\3df231dcbb36299a611760ee6e7fb4e9a7b60831\responsive.scssc" />
+    <Content Include="css\.sass-cache\ca75254e18f33b2fab05ac1ba81a85c63d0308a5\hec.scssc" />
+    <Content Include="css\.sass-cache\ca75254e18f33b2fab05ac1ba81a85c63d0308a5\responsive.scssc" />
+    <Content Include="css\hec.css.map" />
+    <Content Include="css\responsive.css.map" />
+    <Content Include="css\sass\responsive.scss" />
+    <Content Include="bootstrap\js\.jscsrc" />
+    <Content Include="bootstrap\js\.jshintrc" />
+    <Content Include="adminlte\css\adminlte.css.map" />
+    <Content Include="adminlte\css\adminlte.min.css.map" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Public\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Properties\PublishProfiles\TempFolder.pubxml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Areas\Public\Views\Shared\_LayoutPublic.cshtml" />
+    <Content Include="Areas\Admin\Views\Roles\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Roles\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Roles\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Currency.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Email.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EmailAddress.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\GridForeignKey.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Integer.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Double.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Password.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Time.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Url.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\StationType.cshtml" />
+    <Content Include="Areas\Admin\Views\EmailQueue\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\States\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DayOfWeek.cshtml" />
+    <Content Include="Areas\Admin\Views\OffDay\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\OffDay\FileUpload.cshtml" />
+    <Content Include="Areas\Admin\Views\EmailTemplate\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Tips\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Tips\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Tips\_Editable.cshtml" />
+    <Content Include="Areas\Admin\Views\Tips\Edit.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\StationId.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\SubStationId.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\FuncLocation.cshtml" />
+    <Content Include="Areas\Admin\Views\UserRoles\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\UserRoles\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Roles\_Editable.cshtml" />
+    <Content Include="Areas\Admin\Views\SlaSettings\Index.cshtml" />
+    <Content Include="Views\Home\_MainMenu.cshtml" />
+    <Content Include="Views\Reportings\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\HelpFile\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Setup\Index.cshtml" />
+    <Content Include="Scripts\jquery.min.map" />
+    <Content Include="Areas\Public\Views\BillCalculator\Index.cshtml" />
+    <Content Include="Areas\Public\Views\BillInfo\Index.cshtml" />
+    <Content Include="Areas\Public\Views\UsageCalculator\Index.cshtml" />
+    <Content Include="Areas\Public\Views\EnergyTips\Index.cshtml" />
+    <Content Include="Areas\Public\Views\ApplianceComparison\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hec.Domain\Hec.Domain.csproj">
+      <Project>{380948f6-8b4b-4129-b30c-0bb9e33f83ca}</Project>
+      <Name>Hec.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60465</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60500/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
