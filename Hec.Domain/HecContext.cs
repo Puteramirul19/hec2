@@ -34,6 +34,8 @@ namespace Hec
         public virtual DbSet<Bill> Bills { get; set; }
         public virtual DbSet<Friendship> Friendships { get; set; }
         public virtual DbSet<Tariff> Tariffs { get; set; }
+        public virtual DbSet<TariffComponent> TariffComponents { get; set; }
+        public virtual DbSet<TariffConfiguration> TariffConfigurations { get; set; }
 
         //-------------------------------------------------------------------------------- 
 

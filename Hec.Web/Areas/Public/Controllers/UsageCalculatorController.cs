@@ -98,11 +98,26 @@ namespace Hec.Web.Areas.Public.Controllers
             // Get random appliance tips
             List<TipsList> energyTips = new List<TipsList>();
 
+            // Add null check for top5appliance parameter
+            if (top5appliance == null || !top5appliance.Any())
+            {
+                // Return empty result if no appliances provided
+                return Json(energyTips);
+            }
+
             foreach (var appl in top5appliance)
             {
                 var app = await db.Appliances.Where(x => x.Name == appl.category).FirstOrDefaultAsync();
-                var tip = db.Tips.Where(t => t.TipCategoryId == app.TipCategoryId).OrderBy(x => Guid.NewGuid()).FirstOrDefault();
 
+                // Add null check to prevent NullReferenceException
+                if (app == null)
+                {
+                    // Log the missing appliance for debugging
+                    System.Diagnostics.Debug.WriteLine($"Appliance not found: {appl.category}");
+                    continue; // Skip this iteration and move to next appliance
+                }
+
+                var tip = db.Tips.Where(t => t.TipCategoryId == app.TipCategoryId).OrderBy(x => Guid.NewGuid()).FirstOrDefault();
                 if (tip != null)
                 {
                     if (User.Identity.IsAuthenticated)
