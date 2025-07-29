@@ -113,6 +113,8 @@
     <Compile Include="Entities\HouseType.cs" />
     <Compile Include="Entities\RoomType.cs" />
     <Compile Include="Entities\Tariff.cs" />
+    <Compile Include="Entities\TariffComponent.cs" />
+    <Compile Include="Entities\TariffConfiguration.cs" />
     <Compile Include="Entities\Tip.cs" />
     <Compile Include="Entities\TipCategory.cs" />
     <Compile Include="Entities\OffDay.cs" />
